@@ -4,7 +4,7 @@ const Workout  = require("../../models/Workout");
 //View the combined weight of multiple exercises from the past
 // seven workouts on the stats page.
 router.get("/weight", (req, res) => {
-    Workout.find()
+    Workout.find({})
       .then(result => {
         res.json(result);
       })
