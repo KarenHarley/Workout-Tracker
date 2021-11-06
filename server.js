@@ -1,4 +1,4 @@
-require("dotenv").config();
+//require("dotenv").config();
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
@@ -16,11 +16,11 @@ app.use(express.static("public"));
 
 const routes = require("./routes");
 app.use(routes);
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
+console.log(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
 });
-
+/*
 mongoose.connection.on("connected", () =>
   console.log("Connected to MongoDB Endpoint")
 );
@@ -28,6 +28,7 @@ mongoose.connection.on("connected", () =>
 mongoose.connection.on("error", (err) =>
   console.log(`Mongoose default connection error: ${err}`)
 );
+*/
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
