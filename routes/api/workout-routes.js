@@ -1,22 +1,13 @@
 const router = require("express").Router();
 const Workout  = require("../../models/Workout");
-const Plans  = require("../../models/Plans");
 
 
 
-router.post("/submit", ({ body }, res) => {
- Exercise.create(body)
-    .then(({ _id }) => Plans.findOneAndUpdate({}, { $push: { exercises: _id } }, { new: true }))
-    .then(dbUser => {
-      res.json(dbUser);
-    })
-    .catch(err => {
-      res.json(err);
-    });
-});
+
+
 
 router.post("/createPlan", ({ body }, res) => {
- Plans.create(body)
+ Workout.create(body)
     .then(dbTransaction => {
       res.json(dbTransaction);
     })
