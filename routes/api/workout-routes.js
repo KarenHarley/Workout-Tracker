@@ -3,10 +3,7 @@ const Workout  = require("../../models/Workout");
 
 
 
-
-
-
-router.post("/createPlan", ({ body }, res) => {
+router.post("/create", ({ body }, res) => {
  Workout.create(body)
     .then(dbTransaction => {
       res.json(dbTransaction);
@@ -18,9 +15,9 @@ router.post("/createPlan", ({ body }, res) => {
 
 //View the combined weight of multiple exercises from the past
 // seven workouts on the stats page.
-router.get("/weight", (req, res) => {
+router.get("/workouts/range", (req, res) => {
   console.log("Inside get route")
-    Workout.find({})
+    Workout.find({}).limit(7)
       .then(result => {
         console.log(result)
         res.json(result);
