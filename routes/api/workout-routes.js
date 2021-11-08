@@ -17,10 +17,9 @@ router.post("/workouts", ({ body }, res) => {
 
 router.put("/workouts/:id", (req, res) => {
   let updates = req.body; //we set a variable equal to the entire req.body
-  Workout.findoneAndUpdate({ _id: req.params.id }, updates, { new: true });
-  then((updatedWorkout) => res.json(updatedWorkout)).catch((err) =>
-    res.status(400).json("Error: " + err)
-  );
+  Workout.findOneAndUpdate({ _id: req.params.id }, updates, { new: true })
+    .then((updatedWorkout) => res.json(updatedWorkout))
+    .catch((err) => res.status(400).json("Error: " + err));
 });
 
 //View the combined weight of multiple exercises from the past
