@@ -4,11 +4,16 @@ const Workout = require("../../models/Workout");
 
 //create a workout
 router.post("/workouts", ({ body }, res) => {
-  Workout.create(body)
+  console.log("Hello workout post route");
+  console.log("Hi body" + body);
+  Workout.create({})
     .then((dbTransaction) => {
+      console.log("Sending response");
+      console.log(dbTransaction);
       res.json(dbTransaction);
     })
     .catch((err) => {
+      console.log(err);
       res.status(400).json(err);
     });
 });
@@ -16,8 +21,14 @@ router.post("/workouts", ({ body }, res) => {
 // add an exercise
 
 router.put("/workouts/:id", (req, res) => {
+  console.log("Hello");
   let updates = req.body; //we set a variable equal to the entire req.body
-  Workout.findOneAndUpdate({ _id: req.params.id }, updates, { new: true })
+  console.log(updates);
+  Workout.findByIdAndUpdate(
+    req.params.id,
+    { $push: { exercises: updates } },
+    { new: true }
+  )
     .then((updatedWorkout) => res.json(updatedWorkout))
     .catch((err) => res.status(400).json("Error: " + err));
 });
