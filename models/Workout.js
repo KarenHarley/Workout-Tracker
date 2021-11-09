@@ -4,9 +4,8 @@ const Schema = mongoose.Schema;
 
 const WorkoutSchema = new Schema({
   day: {
-    type: String,
-    trim: true,
-    //required: "day is Required"
+    type: Date,
+    default: () => new Date(), //create a new instance of the server Date info
   },
 
   exercises: [
@@ -35,7 +34,7 @@ const WorkoutSchema = new Schema({
       },
       distance: {
         type: Number,
-      }
+      },
       //  required: "exercises is Required"
     },
   ],
