@@ -21,9 +21,7 @@ app.use(routes);
 app.use(require("./routes/api/workout-routes.js"));
 app.use(require("./routes/home-routes.js"));
 
-console.log(process.env.MONGODB_URI);
-const url = process.env.MONGODB_URI || "mongodb://localhost/workout";
-mongoose.connect(url, {
+mongoose.connect("mongodb+srv://KarenHarley:Horse@cluster0.es5a0.mongodb.net/workout?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
