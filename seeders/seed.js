@@ -1,13 +1,6 @@
 const mongoose = require('mongoose');
 const db = require('../models');
 
-/*
-mongoose.connect('mongodb://localhost/workout', {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true,
-});
-*/
 const workoutSeed = [
   {
     day: new Date(new Date().setDate(new Date().getDate() - 9)),
