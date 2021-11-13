@@ -4,12 +4,9 @@ const Workout = require("../../models/Workout");
 
 //create a workout
 router.post("/workouts", ({ body }, res) => {
-  console.log("Hello workout post route");
-  console.log("Hi body" + body);
+
   Workout.create({})
     .then((dbTransaction) => {
-      console.log("Sending response");
-      console.log(dbTransaction);
       res.json(dbTransaction);
     })
     .catch((err) => {
