@@ -18,14 +18,17 @@ const routes = require("./routes");
 app.use(routes);
 
 // routes
-app.use(require("./routes/api/workout-routes.js"));
-app.use(require("./routes/home-routes.js"));
+app.use(require('./routes/api/workout-routes.js'));
+app.use(require('./routes/home-routes.js'));
 
-mongoose.connect("mongodb+srv://KarenHarley:Horse@cluster0.es5a0.mongodb.net/workout?retryWrites=true&w=majority", {
+console.log(process.env.MONGODB_URI);
+const url = process.env.MONGODB_URI || "mongodb://localhost/workout"
+mongoose.connect(url, 
+{
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
-  useFindAndModify: false,
+  useFindAndModify: false
 });
 
 app.listen(PORT, () => {
