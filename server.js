@@ -18,16 +18,16 @@ const routes = require("./routes");
 app.use(routes);
 
 // routes
-app.use(require('./routes/api/workout-routes.js'));
-app.use(require('./routes/home-routes.js'));
+app.use(require("./routes/api/workout-routes.js"));
+app.use(require("./routes/home-routes.js"));
 
 console.log(process.env.MONGODB_URI);
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", 
-{
+const url = process.env.MONGODB_URI || "mongodb://localhost/workout";
+mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
-  useFindAndModify: false
+  useFindAndModify: false,
 });
 
 app.listen(PORT, () => {
