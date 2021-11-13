@@ -4,7 +4,7 @@
 
 ## Description
 
-This application allows users that are not signed up or logged in to view all of the blog posts and even see the comments when clicking on a specific post. When the user signs up or logs in, then they can comment on a post and even create their own. The user also has the ablity to update or delete a created post. 
+This application allows users to easily create a new workout and modify the current workout. It also allows users to see the past workouts in a chart. The objective of the app is to help the  consumer reach their fitness goals more quickly because they can track their workout progress.
 
 ## Table of Contents
 
@@ -19,75 +19,43 @@ This application allows users that are not signed up or logged in to view all of
   ## Usage
 After entering into the website, you can do the following.
 
-1. Login or Sign up.
+1. See the Dashboard.
 
-2. View all of the posts in 'Home'.
+2. Add a new Workout
 
-3. If Logged in, you can make a post.
-
-4. If Logged in, you can comment on a post.
-
-5. If Logged in, you can update your posts.
-
-6. If Logged in, you can delete a post.
+3. Modify the current workout.
 
 
-### Website Pictures
+## Website Pictures
 <br/>
 
-# Below you will see the first page of this application
+### Below you will see the first page of this application
 
 <br/>
 
-![home](./pics/home.png)
+![home](./pics/website.png)
 
 
 
-# Below you will see the login page 
-
-<br/>
-
-![login](./pics/login.png)
-
-<br/>
-
-# Below you will see the comment section of this application
-
-<br/>
-
-![comments](./pics/comments.png)
-
-
-
-# Below you will see the dashboard page of this application for seeing created posts
+### Below you will see the Dashboard 
 
 <br/>
 
 ![dashboard](./pics/dashboard.png)
 
+<br/>
 
-
-# Below you will see the create page of this application for updating a post or deleting it 
+### Below you will see the view when creating a new workout
 
 <br/>
 
-![create](./pics/create.png)
-
-
-
-# Below you will see the edit page of this application for updating a post or deleting it 
-
-<br/>
-
-![edit](./pics/edit.png)
-
-<br/>
+![add workout](./pics/addWorkout.png)
 
 
 
 # Website URL
 
-https://mighty-reaches-19141.herokuapp.com/
+https://floating-ocean-33123.herokuapp.com/?id=618f30f0e5d02e292e20f9d4
 
 
 ## License
