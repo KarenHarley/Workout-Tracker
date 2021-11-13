@@ -1,14 +1,13 @@
 const mongoose = require('mongoose');
 const db = require('../models');
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", 
-{
+/*
+mongoose.connect('mongodb://localhost/workout', {
   useNewUrlParser: true,
+  useFindAndModify: false,
   useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
 });
-
+*/
 const workoutSeed = [
   {
     day: new Date(new Date().setDate(new Date().getDate() - 9)),
@@ -137,3 +136,8 @@ db.Workout.deleteMany({})
     console.error(err);
     process.exit(1);
   });
+
+
+  db.once('open', async () => {
+    await Workout.deleteMany({});
+   })
