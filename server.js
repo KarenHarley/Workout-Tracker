@@ -16,6 +16,7 @@ app.use(express.static("public"));
 
 const routes = require("./routes");
 app.use(routes);
+
 // routes
 app.use(require('./routes/api/workout-routes.js'));
 app.use(require('./routes/home-routes.js'));
@@ -28,15 +29,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout",
   useCreateIndex: true,
   useFindAndModify: false
 });
-/*
-mongoose.connection.on("connected", () =>
-  console.log("Connected to MongoDB Endpoint")
-);
-
-mongoose.connection.on("error", (err) =>
-  console.log(`Mongoose default connection error: ${err}`)
-);
-*/
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
