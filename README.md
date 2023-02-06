@@ -4,7 +4,7 @@
 
 ## Description
 
-This application allows users to easily create a new workout and modify the current workout. It also allows users to see the past workouts and workout related data in charts. The objective of the app is to help the  consumer reach their fitness goals more quickly because they can track their workout progress.
+This application allows users to easily create a new workout and modify the current workout. It also allows users to see the past workouts and workout related data in charts. The objective of the app is to help the consumer reach their fitness goals at a more rapid pace due to being able to track their workout progress.
 
 ## Table of Contents
 
